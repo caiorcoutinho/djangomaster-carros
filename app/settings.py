@@ -41,6 +41,7 @@ DJANGO_APPS = [
 
 MY_APPS = [
     'cars',
+    'accounts',
 ]
 
 THIRD_PARTY_APPS = [

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carros</title>
+</head>
+<style>
+.carCard {
+    padding: 5px;
+}
+</style>
+<body>
+    <header>
+        <h1>Meus carros</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'cars_list' %}">Home</a></li>
+                <li><a href="{% url 'new_car' %}">Cadastrar Carro</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
+                <li><a href="{% url 'register' %}">Registrar-se</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>   
+    {% block content %}
+    {% endblock %}
+</main>
+<footer>&copy; caiorcoutinho.com.br</footer>
+</body>
+</html>
+
