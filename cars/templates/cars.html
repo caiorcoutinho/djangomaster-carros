@@ -1,10 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
         {% for car in cars %}
-        <article class="carCard">
-            <h3>{{ car.brand }} {{ car.model }} - {{ car.factory_year }}</h3>
-            <h4></h4>
-            <p></p>
+        <article style="border: 1px solid black; padding: 10px; margin: 10px; border-radius: 5px; width: 200px; text-align: center; background-color: #f9f9f9;">
+            <a href="{% url 'car_detail' car.pk %}" style="text-decoration: none; color: black; transition: all 0.5s;">
+                {% if car.photo %}
+                <img src="{{ car.photo.url }}" alt="Car Image" class="carImage" width="200px">
+                {% else %}
+                {% endif %}
+                <h3>{{ car.brand }} {{ car.model }} - {{ car.factory_year }}</h3>
+                <h4>R$ {{car.value}}</h4>
+                <h4>{{car.plate}}</h4>
+            </a>
         </article>
         {% endfor %}
 {% endblock %}

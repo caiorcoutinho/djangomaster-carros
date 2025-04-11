@@ -16,13 +16,21 @@
         <nav>
             <ul>
                 <li><a href="{% url 'cars_list' %}">Home</a></li>
+                {% if user.is_authenticated %}
                 <li><a href="{% url 'new_car' %}">Cadastrar Carro</a></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+                {% else %}
                 <li><a href="{% url 'login' %}">Login</a></li>
                 <li><a href="{% url 'register' %}">Registrar-se</a></li>
+                {% endif %}
             </ul>
         </nav>
     </header>
     <main>   
+        <form method="GET">
+            <input type="text" name="search" id="search" placeholder="Buscar carros...">
+            <button type="submit">Pesquisar</button>
+        </form>
     {% block content %}
     {% endblock %}
 </main>

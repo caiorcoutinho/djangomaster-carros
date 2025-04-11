@@ -4,5 +4,6 @@
         <form method="POST">
             {% csrf_token %}
             {{login_form.as_p}}
+            <button type="submit">Entrar</button>
         </form>
 {% endblock %}
